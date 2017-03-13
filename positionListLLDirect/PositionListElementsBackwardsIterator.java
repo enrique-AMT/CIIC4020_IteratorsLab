@@ -9,15 +9,15 @@ import positionInterfaces.Position;
 import positionInterfaces.PositionList;
 import positionInterfaces.PositionListIteratorMaker;
 
-public class PositionListElementsIterator<T> implements PositionListIteratorMaker<T> {
+public class PositionListElementsBackwardsIterator<T> implements PositionListIteratorMaker<T> {
 
 	private Position<T> current; 
 	private PositionList<T> theList; 
 	
-	public PositionListElementsIterator(PositionList<T> list) { 
+	public PositionListElementsBackwardsIterator(PositionList<T> list) { 
 		theList = list; 
 		try { 
-			current = theList.first(); 
+			current = theList.last(); 
 		}
 	    catch (EmptyListException e) { 
 	    	current = null; 
@@ -33,7 +33,7 @@ public class PositionListElementsIterator<T> implements PositionListIteratorMake
 			throw new NoSuchElementException("Iterator has past the end.");
 		Position<T> ptr = current; 
 		try { 
-			current = theList.next(current); 
+			current = theList.prev(current); 
 		}
 		catch (Exception e) { 
 			current = null; 
@@ -45,8 +45,6 @@ public class PositionListElementsIterator<T> implements PositionListIteratorMake
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
 	public Iterator<T> makeIterator(PositionList<T> pl) {
 		// TODO Auto-generated method stub
 		return (Iterator<T>) this;

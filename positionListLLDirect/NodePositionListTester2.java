@@ -1,11 +1,15 @@
 package positionListLLDirect;
 
+import java.util.Iterator;
+
 import exceptionClasses.EmptyListException;
 import positionInterfaces.Position;
 
-public class NodePositionListTester {
+public class NodePositionListTester2 {
+	
 
 	public static void main(String[] args) {
+		
 		
 		NodePositionList<Integer> w = new NodePositionList<Integer> (); 
 		NodePositionList<Integer> q = new NodePositionList<Integer> (); 
