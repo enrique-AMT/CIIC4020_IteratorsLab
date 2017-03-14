@@ -1,11 +1,14 @@
 package positionListLLDirect;
 
 import exceptionClasses.EmptyListException;
+import iteratorMakers.BackwardIterator;
+import iteratorMakers.ForwardIterator;
 import positionInterfaces.Position;
 
 public class NodePositionListTester {
 
 	public static void main(String[] args) {
+		ForwardIterator<Integer> maker2 = new ForwardIterator<>();
 		
 		NodePositionList<Integer> w = new NodePositionList<Integer> (); 
 		NodePositionList<Integer> q = new NodePositionList<Integer> (); 

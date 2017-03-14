@@ -3,16 +3,17 @@ package positionListLLDirect;
 import java.util.Iterator;
 
 import exceptionClasses.EmptyListException;
+import iteratorMakers.BackwardIterator;
 import positionInterfaces.Position;
 
 public class NodePositionListTester2 {
 	
 
 	public static void main(String[] args) {
+		BackwardIterator<Integer> maker1 = new BackwardIterator<>();
 		
-		
-		NodePositionList<Integer> w = new NodePositionList<Integer> (); 
-		NodePositionList<Integer> q = new NodePositionList<Integer> (); 
+		NodePositionList2<Integer> w = new NodePositionList2<Integer> (maker1); 
+		NodePositionList2<Integer> q = new NodePositionList2<Integer> (); 
 		q.addFirst(10); 
 		
 		w.addFirst(5); 
@@ -36,7 +37,7 @@ public class NodePositionListTester2 {
 
 	}
 
-	private static <E> void showElements(NodePositionList<E> w) {
+	private static <E> void showElements(NodePositionList2<E> w) {
 		for(E p : w) 
 			System.out.println(p); 
 	}

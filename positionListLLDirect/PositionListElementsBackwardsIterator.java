@@ -7,9 +7,8 @@ import exceptionClasses.EmptyListException;
 
 import positionInterfaces.Position;
 import positionInterfaces.PositionList;
-import positionInterfaces.PositionListIteratorMaker;
 
-public class PositionListElementsBackwardsIterator<T> implements PositionListIteratorMaker<T> {
+public class PositionListElementsBackwardsIterator<T> implements Iterator<T> {
 
 	private Position<T> current; 
 	private PositionList<T> theList; 
@@ -44,9 +43,5 @@ public class PositionListElementsBackwardsIterator<T> implements PositionListIte
 	public void remove() {
 		// TODO Auto-generated method stub
 		
-	}
-	public Iterator<T> makeIterator(PositionList<T> pl) {
-		// TODO Auto-generated method stub
-		return (Iterator<T>) this;
 	}
 }

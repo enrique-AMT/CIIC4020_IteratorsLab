@@ -24,7 +24,7 @@ public class NodePositionList2<T> implements PositionList<T> {
 
 	private DNode<T> header, trailer; 
 	private int count; 
-	private Iterator<T> iter;
+	PositionListIteratorMaker<T> maker;
 	
 	public NodePositionList2() {
 		header = new DNode<T>(null, null, null, this); 
@@ -33,12 +33,12 @@ public class NodePositionList2<T> implements PositionList<T> {
 		count = 0; 
 	}
 	
-	public NodePositionList2(Iterator<T> makeIterator){
+	public NodePositionList2(PositionListIteratorMaker<T> maker){
 		header = new DNode<T>(null, null, null, this); 
 		trailer = new DNode<T>(null, header, null, this);
 		header.setNext(trailer); 
 		count = 0; 
-		iter=makeIterator;
+		this.maker= maker;
 	}
 	
 	private DNode<T> checkPosition(Position<T> p) throws InvalidPositionException { 
@@ -175,7 +175,7 @@ public class NodePositionList2<T> implements PositionList<T> {
 	 * Method to comply with Iterble...
 	 */
 	public Iterator<T> iterator() {
-		return iter;
+		return maker.makeIterator(this);
 	}
 
 
